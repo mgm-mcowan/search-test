@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
       if (event.persisted) {
         console.log("@@@ - Page was PERSISTED - SHOULD RELOAD.");
         document.body.style.opacity = '0';
-        window.location.reload();
+        window.location = window.location;
       }
     }
     window.addEventListener('pageshow', handlePageShowEvent);
