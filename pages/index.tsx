@@ -32,11 +32,21 @@ export default function Home() {
       }
     }
 
-    // window.addEventListener('unload', handleUnloadEvent);
+    const handlePageHideEvent = (event: any) => {
+      event?.preventDefault();
+      if (event.persisted) {
+        console.log("@@@ - PageHide event was called.");
+        // location.reload();
+      }
+    }
+
+    window.addEventListener('unload', handleUnloadEvent);
     window.addEventListener('pageshow', handlePageShowEvent);
+    window.addEventListener('pagehide', handlePageHideEvent);
     return () => {
-      // window.removeEventListener('unload', handleUnloadEvent);
+      window.removeEventListener('unload', handleUnloadEvent);
       window.removeEventListener('pageshow', handlePageShowEvent);
+      window.removeEventListener('pagehide', handlePageHideEvent);
     }
   }, []);
 
