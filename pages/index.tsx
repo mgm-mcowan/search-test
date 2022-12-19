@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
 
   const handleNavigation = (url: string) => {
-    window.location.assign(`${url}${new Date().getTime()}`);
+    window.location.assign(`${url}#${new Date().getTime()}`);
   }
 
   const simulateAnalytics = (url: string) => {
