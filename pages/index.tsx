@@ -12,6 +12,10 @@ export default function Home() {
     window.location.assign(url);
   }
 
+  const simulateAnalytics = (url: string) => {
+    console.log(url);
+  }
+
   return (
     <>
       <Head>
@@ -35,7 +39,8 @@ export default function Home() {
               <p className={inter.className}>
                 {result.propertyName} - {result.contentType}
               </p>
-              <button onClick={() => handleNavigation(result.bookingUrl)}>Navigate</button>
+              <button style={{ marginTop: 8 }} onClick={() => handleNavigation(result.bookingUrl)}>Navigate</button>
+              <a style={{ marginTop: 8, marginLeft: 16 }} href={result.bookingUrl} onClick={() => simulateAnalytics(result.bookingUrl)}>Navigate</a>
             </div>
           ))}
         </div>
