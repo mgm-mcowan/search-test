@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import styles from '../styles/Home.module.css'
@@ -15,6 +16,20 @@ export default function Home() {
   const simulateAnalytics = (url: string) => {
     console.log(url);
   }
+
+  React.useEffect(() => {
+    const handleUnloadEvent = (event: any) => {
+      event.preventDefault();
+      console.log("unload event was called")
+      event.returnValue = '';
+    }
+
+    window.addEventListener('unload', handleUnloadEvent);
+
+    return () => {
+      window.removeEventListener('unload', handleUnloadEvent);
+    }
+  }, [])
 
   return (
     <>
