@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
 
   const handleNavigation = (url: string) => {
-    window.location.assign(url);
+    window.location.assign(`${url}${new Date().getTime()}`);
   }
 
   const simulateAnalytics = (url: string) => {
@@ -51,8 +51,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.center}>
-        </div>
         <div className={styles.grid}>
           {searchResults.map((result) => (
             <div
