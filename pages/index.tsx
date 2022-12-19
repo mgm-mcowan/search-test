@@ -32,11 +32,11 @@ export default function Home() {
       }
     }
 
-    window.addEventListener('unload', handleUnloadEvent);
-    window.addEventListener('pageshow', handlePageShowEvent);
+    // window.addEventListener('unload', handleUnloadEvent);
+    // window.addEventListener('pageshow', handlePageShowEvent);
     return () => {
-      window.removeEventListener('unload', handleUnloadEvent);
-      window.removeEventListener('pageshow', handlePageShowEvent);
+      // window.removeEventListener('unload', handleUnloadEvent);
+      // window.removeEventListener('pageshow', handlePageShowEvent);
     }
   }, []);
 
