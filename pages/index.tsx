@@ -33,10 +33,10 @@ export default function Home() {
     }
 
     // window.addEventListener('unload', handleUnloadEvent);
-    // window.addEventListener('pageshow', handlePageShowEvent);
+    window.addEventListener('pageshow', handlePageShowEvent);
     return () => {
       // window.removeEventListener('unload', handleUnloadEvent);
-      // window.removeEventListener('pageshow', handlePageShowEvent);
+      window.removeEventListener('pageshow', handlePageShowEvent);
     }
   }, []);
 
